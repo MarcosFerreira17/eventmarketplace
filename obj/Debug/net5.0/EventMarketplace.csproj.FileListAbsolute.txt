@@ -159,3 +159,11 @@ C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desa
 C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\ref\EventMarketplace.dll
 C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\EventMarketplace.pdb
 C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\EventMarketplace.genruntimeconfig.cache
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Shared\_LayoutAdmin.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\Eventos.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\NovoEvento.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\CasaDeShow.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\EditarCasaDeShow.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\NovaCasaDeShow.cshtml.g.cs
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\EventMarketplace\obj\Debug\net5.0\Razor\Views\Admin\EditarEvento.cshtml.g.cs

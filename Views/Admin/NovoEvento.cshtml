@@ -1,0 +1,50 @@
+@model EventMarketplace.DTO.EventoDTO
+
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<h2>Novo Evento</h2>
+<form class="form-horizontal" asp-action="Salvar" asp-controller="Evento" method="POST">
+    <input type="hidden" asp-for="Id" value="0">
+
+    <label asp-for="Nome">Nome</label>
+    <input class="form-control" type="text" asp-for="Nome" placeholder="Nome">
+    <span asp-validation-for="Nome"></span><br>
+
+    <label asp-for="Imagem">Imagem</label>
+    <input class="form-control" type="text" asp-for="Imagem" placeholder=".jpg">
+    <span asp-validation-for="Imagem"></span><br>
+
+
+    <label asp-for="Genero">Gênero Musical</label>
+    <select class="form-control" asp-for="Genero">
+        <option value="0">Pagode</option>
+        <option value="1">Funk</option>
+        <option value="2">Rock</option>
+        <option value="3">Metal</option>
+        <option value="4">Eletronica</option>
+        <option value="5">Pop</option>
+        <option value="6">Eclético</option>
+    </select>
+    <span asp-validation-for="Genero"></span><br>
+
+    <label asp-for="CasaDeShowId">Casa de Show</label>
+    <select class="form-control" asp-for="CasaDeShowId"
+        asp-items='@(new SelectList(@ViewBag.casaDeShow,"Id", "Nome"))'></select>
+    <span asp-validation-for="CasaDeShowId"></span><br>
+
+    <label asp-for="Capacidade">Capacidade</label>
+    <input class="form-control" type="number" asp-for="Capacidade" placeholder="100">
+    <span asp-validation-for="Capacidade"></span><br>
+
+    <label asp-for="Data">Data do evento</label>
+    <input class="form-control" type="date" asp-for="Data">
+    <span asp-validation-for="Data"></span><br>
+
+    <label asp-for="ValorDoTicket">Valor do ticket</label>
+    <input class="form-control" type="number" asp-for="ValorDoTicket" placeholder="90.00">
+    <span asp-validation-for="ValorDoTicket"></span><br>
+
+    <button class="btn btn-success">Cadastrar</button>
+</form>

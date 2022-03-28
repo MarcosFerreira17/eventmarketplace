@@ -17,61 +17,61 @@ namespace EventMarketplace.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.15");
 
-            modelBuilder.Entity("EventMarketplace.Models.Event", b =>
+            modelBuilder.Entity("EventMarketplace.Models.CasaDeShow", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Capacity")
+                    b.Property<string>("Endereco")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CasaDeShows");
+                });
+
+            modelBuilder.Entity("EventMarketplace.Models.Evento", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<int>("Capacidade")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CasaDeShowId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Data")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Genre")
+                    b.Property<string>("Genero")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Imagem")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Nome")
                         .HasColumnType("longtext");
-
-                    b.Property<int?>("ShowHouseId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<double>("TicketValue")
+                    b.Property<double>("ValorDoTicket")
                         .HasColumnType("double");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ShowHouseId");
+                    b.HasIndex("CasaDeShowId");
 
-                    b.ToTable("Events");
-                });
-
-            modelBuilder.Entity("EventMarketplace.Models.ShowHouse", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ShowHouses");
+                    b.ToTable("Eventos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -270,13 +270,13 @@ namespace EventMarketplace.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("EventMarketplace.Models.Event", b =>
+            modelBuilder.Entity("EventMarketplace.Models.Evento", b =>
                 {
-                    b.HasOne("EventMarketplace.Models.ShowHouse", "ShowHouse")
+                    b.HasOne("EventMarketplace.Models.CasaDeShow", "CasaDeShow")
                         .WithMany()
-                        .HasForeignKey("ShowHouseId");
+                        .HasForeignKey("CasaDeShowId");
 
-                    b.Navigation("ShowHouse");
+                    b.Navigation("CasaDeShow");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
