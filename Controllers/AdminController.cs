@@ -27,7 +27,6 @@ namespace EventMarketplace.Controllers
 
         public IActionResult NovoEvento()
         {
-
             ViewBag.CasaDeShow = database.CasaDeShows.ToList();
             return View();
         }
@@ -35,6 +34,7 @@ namespace EventMarketplace.Controllers
         public IActionResult EditarEvento(int id)
         {
             var evento = database.Eventos.Include(e => e.CasaDeShow).First(e => e.Id == id);
+
 
             EventoDTO eventoView = new EventoDTO();
 

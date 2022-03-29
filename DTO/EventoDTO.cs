@@ -19,9 +19,12 @@ namespace EventMarketplace.DTO
         public DateTime Data { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]
         public double ValorDoTicket { get; set; }
+        [Required(ErrorMessage = "O evento deve conter um valor.")]
+        public string ValorDoTicketString { get; set; }
         [Required(ErrorMessage = "O evento deve conter uma casa de show.")]
         public int CasaDeShowId { get; set; }
         [Required(ErrorMessage = "O evento deve conter um genero musical.")]
+        [Range(0, 6, ErrorMessage = "Genero inválido.")]
         public string Genero { get; set; }
     }
 }

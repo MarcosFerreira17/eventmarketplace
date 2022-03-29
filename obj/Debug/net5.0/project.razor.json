@@ -15619,11 +15619,6 @@
   "RootNamespace": "EventMarketplace",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\Views\\Shared\\_LayoutAdmin.cshtml",
       "TargetPath": "Views\\Shared\\_LayoutAdmin.cshtml",
       "FileKind": "mvc"
@@ -15636,6 +15631,11 @@
     {
       "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\Views\\Admin\\NovoEvento.cshtml",
       "TargetPath": "Views\\Admin\\NovoEvento.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\Views\\Home\\ListaCasaDeShow.cshtml",
+      "TargetPath": "Views\\Home\\ListaCasaDeShow.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15676,6 +15676,11 @@
     {
       "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\Views\\Home\\ListaEventos.cshtml",
+      "TargetPath": "Views\\Home\\ListaEventos.cshtml",
       "FileKind": "mvc"
     },
     {

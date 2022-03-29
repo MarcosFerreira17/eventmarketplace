@@ -4,7 +4,7 @@ namespace EventMarketplace.Models
     public class Evento
     {
         public Evento() { }
-        public Evento(int Id, string Nome, int Capacidade, string Imagem, DateTime Data, double ValorDoTicket, CasaDeShow CasaDeShow, string Genero)
+        public Evento(int Id, string Nome, int Capacidade, string Imagem, DateTime Data, float ValorDoTicket, CasaDeShow CasaDeShow, string Genero)
         {
             this.Id = Id;
             this.Nome = Nome;
@@ -20,7 +20,7 @@ namespace EventMarketplace.Models
         public int Capacidade { get; set; }
         public string Imagem { get; set; }
         public DateTime Data { get; set; }
-        public double ValorDoTicket { get; set; }
+        public float ValorDoTicket { get; set; }
         public CasaDeShow CasaDeShow { get; set; }
         public string Genero { get; set; }
         public bool Status { get; set; }

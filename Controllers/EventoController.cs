@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Linq;
 using EventMarketplace.Data;
 using EventMarketplace.DTO;
@@ -14,6 +15,7 @@ namespace EventMarketplace.Controllers
             this.database = database;
         }
 
+
         [HttpPost]
         public IActionResult Salvar(EventoDTO eventoTemporario)
         {
@@ -24,7 +26,7 @@ namespace EventMarketplace.Controllers
                 evento.Capacidade = eventoTemporario.Capacidade;
                 evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
-                evento.ValorDoTicket = eventoTemporario.ValorDoTicket;
+                evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
                 evento.Imagem = eventoTemporario.Imagem;
                 evento.CasaDeShow = database.CasaDeShows.First(CasaDeShow => CasaDeShow.Id == eventoTemporario.CasaDeShowId);
                 evento.Status = true;
@@ -46,12 +48,13 @@ namespace EventMarketplace.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 var evento = database.Eventos.First(e => e.Id == eventoTemporario.Id);
                 evento.Nome = eventoTemporario.Nome;
                 evento.Capacidade = eventoTemporario.Capacidade;
                 evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
-                evento.ValorDoTicket = eventoTemporario.ValorDoTicket;
+                evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
                 evento.Imagem = eventoTemporario.Imagem;
                 evento.CasaDeShow = database.CasaDeShows.First(CasaDeShow => CasaDeShow.Id == eventoTemporario.Id);
                 database.SaveChanges();

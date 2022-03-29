@@ -12,6 +12,9 @@ using EventMarketplace.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace EventMarketplace
 {
@@ -58,6 +61,12 @@ namespace EventMarketplace
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Resourses")),
+                RequestPath = new PathString("/Resourses")
+            });
 
             app.UseEndpoints(endpoints =>
             {
