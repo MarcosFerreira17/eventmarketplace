@@ -24,7 +24,7 @@ namespace EventMarketplace.Controllers
                 Evento evento = new Evento();
                 evento.Nome = eventoTemporario.Nome;
                 evento.Capacidade = eventoTemporario.Capacidade;
-                evento.Data = eventoTemporario.Data;
+                // evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
                 evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
                 evento.Imagem = eventoTemporario.Imagem;
@@ -52,7 +52,7 @@ namespace EventMarketplace.Controllers
                 var evento = database.Eventos.First(e => e.Id == eventoTemporario.Id);
                 evento.Nome = eventoTemporario.Nome;
                 evento.Capacidade = eventoTemporario.Capacidade;
-                evento.Data = eventoTemporario.Data;
+                // evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
                 evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
                 evento.Imagem = eventoTemporario.Imagem;

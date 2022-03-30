@@ -16,7 +16,7 @@ namespace EventMarketplace.DTO
         [Range(0, 50000)]
         public int Capacidade { get; set; }
         [Required(ErrorMessage = "Especifique a data do evento.")]
-        public DateTime Data { get; set; }
+        public string Data { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]
         public double ValorDoTicket { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]

@@ -3,6 +3,10 @@
 @{
     Layout = "_LayoutAdmin";
 }
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
 <h2>Editar Evento</h2>
 <form class="form-horizontal" asp-action="Atualizar" asp-controller="Evento" method="POST">
     <input type="hidden" asp-for="Id">

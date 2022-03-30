@@ -14,7 +14,6 @@ var valorTotalDaVenda = 0.00;
 AtualizarValorTotalDaVenda();
 $("#posvenda").hide();
 
-
 /* Preenchimento de Campos*/
 
 function AtualizarValorTotalDaVenda() {

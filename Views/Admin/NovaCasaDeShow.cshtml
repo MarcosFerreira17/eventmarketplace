@@ -2,6 +2,9 @@
 @{
     Layout = "_LayoutAdmin";
 }
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
 <h2>Nova Casa de Show</h2>
 <hr>
 <form class="form-horizontal" asp-controller="CasaDeShow" asp-action="Salvar" method="POST">
@@ -10,11 +13,12 @@
 
     <label asp-for="Nome">Nome</label>
     <input type="text" asp-for="Nome" class="form-control" placeholder="Nome da casa de show">
-    <span asp-validation-for="Nome"></span>
+    <span asp-validation-for="Nome"></span><br>
 
     <label asp-for="Endereco">Endereço</label>
-    <input type="text" asp-for="Endereco" class="form-control" placeholder="Endereco da casa de show">
-    <span asp-validation-for="Endereco"></span>
+    <input type="text" asp-for="Endereco" class="form-control"
+        placeholder="Exemplo: São Paulo, AlphaVille - R. São João da Silva numero: 123">
+    <span asp-validation-for="Endereco"></span><br>
 
     <br><button class="btn btn-success">Cadastrar</button>
 </form>

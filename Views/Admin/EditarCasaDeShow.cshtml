@@ -3,6 +3,10 @@
 @{
     Layout = "_LayoutAdmin";
 }
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
 <h2>Editar Produto</h2>
 <form class="form-horizontal" asp-controller="CasaDeShow" asp-action="Atualizar" method="POST">
 
@@ -10,10 +14,10 @@
 
     <label asp-for="Nome">Nome</label>
     <input class="form-control" type="text" asp-for="Nome" placeholder="Nome da casa de show"><br>
-    <span asp-validation-for="Nome"></span>
+    <span asp-validation-for="Nome"></span><br>
 
     <label asp-for="Endereco">Endereço</label>
     <input class="form-control" type="text" asp-for="Endereco" placeholder="Endereço"><br>
-    <span asp-validation-for="Endereco"></span>
+    <span asp-validation-for="Endereco"></span><br>
     <button class="btn btn-success">Atualizar</button>
 </form>

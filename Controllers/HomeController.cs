@@ -32,9 +32,10 @@ namespace EventMarketplace.Controllers
             return View(eventos);
         }
 
-        public IActionResult ListaCasasDeShow()
+        public IActionResult ListaCasaDeShow()
         {
-            return View();
+            var casaDeShows = database.CasaDeShows.Where(ca => ca.Status == true).ToList();
+            return View(casaDeShows);
         }
 
         public IActionResult Privacy()

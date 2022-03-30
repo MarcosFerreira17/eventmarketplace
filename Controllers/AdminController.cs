@@ -1,3 +1,4 @@
+using System;
 using EventMarketplace.Data;
 using Microsoft.AspNetCore.Mvc;
 using EventMarketplace.Models;
@@ -35,13 +36,14 @@ namespace EventMarketplace.Controllers
         {
             var evento = database.Eventos.Include(e => e.CasaDeShow).First(e => e.Id == id);
 
+            string dataAtual = evento.Data.ToString();
 
             EventoDTO eventoView = new EventoDTO();
 
             eventoView.Id = evento.Id;
             eventoView.Nome = evento.Nome;
             eventoView.Capacidade = evento.Capacidade;
-            eventoView.Data = evento.Data;
+            eventoView.Data = dataAtual;
             eventoView.Imagem = evento.Imagem;
             eventoView.ValorDoTicket = evento.ValorDoTicket;
             eventoView.CasaDeShowId = evento.CasaDeShow.Id;
