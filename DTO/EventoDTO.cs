@@ -14,12 +14,12 @@ namespace EventMarketplace.DTO
         public string Imagem { get; set; }
         [Required(ErrorMessage = "O evento deve ter uma capacidade determinada, seu limite é de 50.000 pessoas")]
         [Range(0, 50000)]
-        public int Capacidade { get; set; }
+        public int IngressoId { get; set; }
         [Required(ErrorMessage = "Especifique a data do evento.")]
         [DataType(DataType.Date)]
         public DateTime Data { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]
-        public double ValorDoTicket { get; set; }
+        public float ValorDoTicket { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]
         public string ValorDoTicketString { get; set; }
         [Required(ErrorMessage = "O evento deve conter uma casa de show.")]

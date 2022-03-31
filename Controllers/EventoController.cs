@@ -15,7 +15,6 @@ namespace EventMarketplace.Controllers
             this.database = database;
         }
 
-
         [HttpPost]
         public IActionResult Salvar(EventoDTO eventoTemporario)
         {
@@ -23,11 +22,11 @@ namespace EventMarketplace.Controllers
             {
                 Evento evento = new Evento();
                 evento.Nome = eventoTemporario.Nome;
-                evento.Capacidade = eventoTemporario.Capacidade;
+                evento.Imagem = eventoTemporario.Imagem;
                 evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
                 evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
-                evento.Imagem = eventoTemporario.Imagem;
+                evento.Ingresso = database.Ingressos.First(Ingresso => Ingresso.Id == eventoTemporario.Id);
                 evento.CasaDeShow = database.CasaDeShows.First(CasaDeShow => CasaDeShow.Id == eventoTemporario.CasaDeShowId);
                 evento.Status = true;
 
@@ -39,6 +38,7 @@ namespace EventMarketplace.Controllers
             else
             {
                 ViewBag.CasaDeShow = database.CasaDeShows.ToList();
+                ViewBag.Ingresso = database.Ingressos.ToList();
                 return View("../Admin/NovoEvento");
             }
         }
@@ -48,14 +48,13 @@ namespace EventMarketplace.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 var evento = database.Eventos.First(e => e.Id == eventoTemporario.Id);
                 evento.Nome = eventoTemporario.Nome;
-                evento.Capacidade = eventoTemporario.Capacidade;
+                evento.Imagem = eventoTemporario.Imagem;
                 evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
                 evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
-                evento.Imagem = eventoTemporario.Imagem;
+                evento.Ingresso = database.Ingressos.First(Ingresso => Ingresso.Id == eventoTemporario.Id);
                 evento.CasaDeShow = database.CasaDeShows.First(CasaDeShow => CasaDeShow.Id == eventoTemporario.Id);
                 database.SaveChanges();
                 return RedirectToAction("Eventos", "Admin");

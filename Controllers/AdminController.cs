@@ -43,31 +43,33 @@ namespace EventMarketplace.Controllers
 
         public IActionResult Eventos()
         {
-            var eventos = database.Eventos.Include(e => e.CasaDeShow).Where(e => e.Status == true).ToList();
+            var eventos = database.Eventos.Include(e => e.CasaDeShow).Include(i => i.Ingresso).Where(e => e.Status == true).ToList();
             return View(eventos);
         }
 
         public IActionResult NovoEvento()
         {
             ViewBag.CasaDeShow = database.CasaDeShows.ToList();
+            ViewBag.Ingresso = database.Ingressos.ToList();
             return View();
         }
 
         public IActionResult EditarEvento(int id)
         {
-            var evento = database.Eventos.Include(e => e.CasaDeShow).First(e => e.Id == id);
+            var evento = database.Eventos.Include(c => c.CasaDeShow).Include(i => i.Ingresso).First(e => e.Id == id);
 
             EventoDTO eventoView = new EventoDTO();
 
             eventoView.Id = evento.Id;
             eventoView.Nome = evento.Nome;
-            eventoView.Capacidade = evento.Capacidade;
             eventoView.Data = evento.Data;
             eventoView.Imagem = evento.Imagem;
             eventoView.ValorDoTicket = evento.ValorDoTicket;
+            eventoView.IngressoId = evento.Ingresso.Id;
             eventoView.CasaDeShowId = evento.CasaDeShow.Id;
 
             ViewBag.CasaDeShow = database.CasaDeShows.ToList();
+            ViewBag.Ingresso = database.Ingressos.ToList();
 
             return View(eventoView);
         }

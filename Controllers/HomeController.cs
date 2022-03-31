@@ -28,7 +28,7 @@ namespace EventMarketplace.Controllers
 
         public IActionResult ListaEventos()
         {
-            var eventos = database.Eventos.Include(e => e.CasaDeShow).Where(e => e.Status == true).ToList();
+            var eventos = database.Eventos.Include(e => e.CasaDeShow).Include(i => i.Ingresso).Where(e => e.Status == true).ToList();
             return View(eventos);
         }
 
