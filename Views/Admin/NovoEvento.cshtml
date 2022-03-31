@@ -19,7 +19,6 @@
     <input class="form-control" type="text" asp-for="Imagem" placeholder=".jpg">
     <span asp-validation-for="Imagem"></span><br>
 
-
     <label asp-for="Genero">Gênero Musical</label>
     <select class="form-control" asp-for="Genero">
         <option value="0">Pagode</option>
@@ -34,12 +33,12 @@
 
     <label asp-for="CasaDeShowId">Casa de Show</label>
     <select class="form-control" asp-for="CasaDeShowId"
-        asp-items='@(new SelectList(@ViewBag.casaDeShow,"Id", "Nome"))'></select>
+        asp-items='@(new SelectList(@ViewBag.CasaDeShow,"Id", "Nome"))'></select>
     <span asp-validation-for="CasaDeShowId"></span><br>
 
-    <label asp-for="IngressoId">Capacidade</label>
-    <input class="form-control" type="number" asp-for="IngressoId" placeholder="100">
-    <span asp-validation-for="IngressoId"></span><br>
+    <label asp-for="Ingresso">Capacidade</label>
+    <input class="form-control" type="number" asp-for="Ingresso" placeholder="100">
+    <span asp-validation-for="Ingresso"></span><br>
 
     <label asp-for="Data">Data do evento</label>
     <input class="form-control" type="date" asp-for="Data">

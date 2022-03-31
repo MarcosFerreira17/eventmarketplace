@@ -29,9 +29,6 @@ namespace EventMarketplace.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
-
                     b.HasKey("Id");
 
                     b.ToTable("CasaDeShows");
@@ -55,14 +52,11 @@ namespace EventMarketplace.Migrations
                     b.Property<string>("Imagem")
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("IngressoId")
+                    b.Property<int>("Ingresso")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("longtext");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
 
                     b.Property<float>("ValorDoTicket")
                         .HasColumnType("float");
@@ -71,23 +65,7 @@ namespace EventMarketplace.Migrations
 
                     b.HasIndex("CasaDeShowId");
 
-                    b.HasIndex("IngressoId");
-
                     b.ToTable("Eventos");
-                });
-
-            modelBuilder.Entity("EventMarketplace.Models.Ingresso", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Ingressos");
                 });
 
             modelBuilder.Entity("EventMarketplace.Models.Venda", b =>
@@ -320,13 +298,7 @@ namespace EventMarketplace.Migrations
                         .WithMany()
                         .HasForeignKey("CasaDeShowId");
 
-                    b.HasOne("EventMarketplace.Models.Ingresso", "Ingresso")
-                        .WithMany()
-                        .HasForeignKey("IngressoId");
-
                     b.Navigation("CasaDeShow");
-
-                    b.Navigation("Ingresso");
                 });
 
             modelBuilder.Entity("EventMarketplace.Models.Venda", b =>

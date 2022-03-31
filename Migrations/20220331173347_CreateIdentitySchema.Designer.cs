@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventMarketplace.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220328170632_UpdateDasEntidades")]
-    partial class UpdateDasEntidades
+    [Migration("20220331173347_CreateIdentitySchema")]
+    partial class CreateIdentitySchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,9 +31,6 @@ namespace EventMarketplace.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
-
                     b.HasKey("Id");
 
                     b.ToTable("CasaDeShows");
@@ -43,9 +40,6 @@ namespace EventMarketplace.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("Capacidade")
                         .HasColumnType("int");
 
                     b.Property<int?>("CasaDeShowId")
@@ -60,20 +54,48 @@ namespace EventMarketplace.Migrations
                     b.Property<string>("Imagem")
                         .HasColumnType("longtext");
 
+                    b.Property<int>("Ingresso")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .HasColumnType("longtext");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<double>("ValorDoTicket")
-                        .HasColumnType("double");
+                    b.Property<float>("ValorDoTicket")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CasaDeShowId");
 
                     b.ToTable("Eventos");
+                });
+
+            modelBuilder.Entity("EventMarketplace.Models.Venda", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Data")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int?>("EventoId")
+                        .HasColumnType("int");
+
+                    b.Property<float>("QuantidadeIngresso")
+                        .HasColumnType("float");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<float>("ValorDaVenda")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventoId");
+
+                    b.ToTable("Vendas");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -279,6 +301,15 @@ namespace EventMarketplace.Migrations
                         .HasForeignKey("CasaDeShowId");
 
                     b.Navigation("CasaDeShow");
+                });
+
+            modelBuilder.Entity("EventMarketplace.Models.Venda", b =>
+                {
+                    b.HasOne("EventMarketplace.Models.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoId");
+
+                    b.Navigation("Evento");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

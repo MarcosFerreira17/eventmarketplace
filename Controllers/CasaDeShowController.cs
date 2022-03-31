@@ -14,8 +14,6 @@ namespace EventMarketplace.Controllers
             this.database = database;
         }
 
-
-
         [HttpPost]
         public IActionResult Salvar(CasaDeShowDTO casaDeShowTemporaria)
         {
@@ -24,7 +22,6 @@ namespace EventMarketplace.Controllers
                 CasaDeShow casaDeShow = new CasaDeShow();
                 casaDeShow.Nome = casaDeShowTemporaria.Nome;
                 casaDeShow.Endereco = casaDeShowTemporaria.Endereco;
-                casaDeShow.Status = true;
 
                 database.CasaDeShows.Add(casaDeShow);
                 database.SaveChanges();
@@ -58,7 +55,7 @@ namespace EventMarketplace.Controllers
             if (id > 0)
             {
                 var casaDeShow = database.CasaDeShows.First(ca => ca.Id == id);
-                casaDeShow.Status = false;
+                database.Remove(casaDeShow);
                 database.SaveChanges();
             }
             return RedirectToAction("CasaDeShow", "Admin");

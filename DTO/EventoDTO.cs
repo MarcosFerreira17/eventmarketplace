@@ -14,9 +14,9 @@ namespace EventMarketplace.DTO
         public string Imagem { get; set; }
         [Required(ErrorMessage = "O evento deve ter uma capacidade determinada, seu limite é de 50.000 pessoas")]
         [Range(0, 50000)]
-        public int IngressoId { get; set; }
+        public int Ingresso { get; set; }
         [Required(ErrorMessage = "Especifique a data do evento.")]
-        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
         public DateTime Data { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]
         public float ValorDoTicket { get; set; }

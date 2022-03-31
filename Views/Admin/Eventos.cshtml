@@ -7,9 +7,13 @@
     ViewData["Title"] = "Admin Dashboard";
 }
 
+
+
 <h2>Eventos</h2>
-<a asp-action="NovoEvento" asp-controller="Admin" class="btn btn-success">Criar novo Evento</a>
+<a asp-action="NovoEvento" id="NovoEvento" asp-controller="Admin" class="btn btn-success">Criar novo Evento</a>
 <hr>
+
+
 
 <script>
     $(document).ready(function () {
@@ -37,11 +41,12 @@
         <tr>
             <th>Id</th>
             <th>Nome</th>
+            <th>Capacidade</th>
             <th>Genero</th>
             <th>Valor</th>
             <th>Casa de Show</th>
             <th>Data</th>
-            <th>Capacidade</th>
+
             <th>Ações</th>
         </tr>
     </thead>
@@ -80,19 +85,20 @@
                         <span>Diversos</span>
                     }
                 </td>
+                <td>@eventos.Ingresso</td>
                 <td>@eventos.ValorDoTicket</td>
                 <td>@eventos.CasaDeShow.Nome</td>
                 <td>@eventos.Data</td>
-                <td>@eventos.Ingresso.Quantidade</td>
+
                 <td><a href="/Admin/EditarEvento/@eventos.Id" class="btn btn-primary">Editar</a>
 
-                    <form asp-action="Deletar" asp-controller="Eventos" style="display: inline;">
+                    <form asp-action="Deletar" asp-controller="Evento" style="display: inline;">
                         <input type="hidden" nome="id" id="id" value="@eventos.Id">
                         <button class="btn btn-danger">Deletar</button>
                     </form>
-
                 </td>
             </tr>
         }
+
     </tbody>
 </table>

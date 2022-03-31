@@ -11,7 +11,6 @@ namespace EventMarketplace.Data
     {
         public DbSet<CasaDeShow> CasaDeShows { get; set; }
         public DbSet<Evento> Eventos { get; set; }
-        public DbSet<Ingresso> Ingressos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
