@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+07k0nkw3kWIw2wQ5cYFN511px8D6tuqJABAepnl3DnQ6SE2E1Nq6hQe30V+gChiojoG/zEEote/9jV9dBM9fA==",
+  "dgSpecHash": "JSsJykiKNpyA356guQVSfQqUrPpkNt0dhHPWtRJu0A7WZ6Cz52XF46V1CV3Y+Z/CB9TI5M8y9QqEGSaL7vU+Iw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\EventMarketplace\\EventMarketplace.csproj",
+  "projectFilePath": "C:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\Projeto do Desafio\\eventmarketplace\\EventMarketplace.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mnia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mnia\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.15\\microsoft.aspnetcore.cryptography.internal.5.0.15.nupkg.sha512",
