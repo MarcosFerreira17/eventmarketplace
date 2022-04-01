@@ -7,7 +7,6 @@ namespace EventMarketplace.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-
         public string Imagem { get; set; }
         public DateTime Data { get; set; }
         public float ValorDoTicket { get; set; }

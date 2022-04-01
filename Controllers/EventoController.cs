@@ -32,7 +32,7 @@ namespace EventMarketplace.Controllers
                 evento.CasaDeShow = database.CasaDeShows.First(CasaDeShow => CasaDeShow.Id == eventoTemporario.CasaDeShowId);
                 database.Eventos.Add(evento);
                 database.SaveChanges();
-                return RedirectToAction();
+                return RedirectToAction("Eventos", "Admin");
             }
             else
             {
@@ -70,9 +70,10 @@ namespace EventMarketplace.Controllers
                 var evento = database.Eventos.First(e => e.Id == id);
                 database.Eventos.Remove(evento);
                 database.SaveChanges();
-                return Ok();
+                return RedirectToAction("Eventos", "Admin");
             }
             return RedirectToAction("Eventos", "Admin");
+
         }
     }
 }

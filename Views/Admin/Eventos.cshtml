@@ -41,8 +41,9 @@
         <tr>
             <th>Id</th>
             <th>Nome</th>
-            <th>Capacidade</th>
             <th>Genero</th>
+            <th>Capacidade</th>
+
             <th>Valor</th>
             <th>Casa de Show</th>
             <th>Data</th>
@@ -91,9 +92,8 @@
                 <td>@eventos.Data</td>
 
                 <td><a href="/Admin/EditarEvento/@eventos.Id" class="btn btn-primary">Editar</a>
-
-                    <form asp-action="Deletar" asp-controller="Evento" style="display: inline;">
-                        <input type="hidden" nome="id" id="id" value="@eventos.Id">
+                    <form asp-controller="Evento" asp-action="Deletar" method="POST" style="display: inline;">
+                        <input type="hidden" value="@eventos.Id">
                         <button class="btn btn-danger">Deletar</button>
                     </form>
                 </td>
