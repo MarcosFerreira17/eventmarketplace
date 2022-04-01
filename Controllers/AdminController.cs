@@ -1,8 +1,5 @@
-using System.Runtime.Serialization;
-using System;
 using EventMarketplace.Data;
 using Microsoft.AspNetCore.Mvc;
-using EventMarketplace.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using EventMarketplace.DTO;

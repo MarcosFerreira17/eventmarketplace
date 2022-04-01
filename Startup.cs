@@ -62,12 +62,6 @@ namespace EventMarketplace
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Resourses")),
-                RequestPath = new PathString("/Resourses")
-            });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

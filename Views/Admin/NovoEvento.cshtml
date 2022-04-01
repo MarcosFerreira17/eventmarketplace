@@ -8,16 +8,16 @@
 }
 
 <h2>Novo Evento</h2>
-<form class="form-horizontal" asp-action="Salvar" asp-controller="Evento" method="POST">
+<form class="form-horizontal" asp-action="Salvar" asp-controller="Evento" enctype="multipart/form-data" method="POST">
     <input type="hidden" asp-for="Id" value="0">
 
     <label asp-for="Nome">Nome</label>
     <input class="form-control" type="text" asp-for="Nome" placeholder="Nome">
-    <span asp-validation-for="Nome"></span><br>
+    <span class="text-danger" asp-validation-for="Nome"></span><br>
 
     <label asp-for="Imagem">Imagem</label>
-    <input class="form-control" type="text" asp-for="Imagem" placeholder=".jpg">
-    <span asp-validation-for="Imagem"></span><br>
+    <input class="form-control" type="file" name="anexo" asp-for="Imagem" placeholder=".jpg">
+    <span class="text-danger" asp-validation-for="Imagem"></span><br>
 
     <label asp-for="Genero">Gênero Musical</label>
     <select class="form-control" asp-for="Genero">
@@ -29,24 +29,24 @@
         <option value="5">Pop</option>
         <option value="6">Eclético</option>
     </select>
-    <span asp-validation-for="Genero"></span><br>
+    <span class="text-danger" asp-validation-for="Genero"></span><br>
 
     <label asp-for="CasaDeShowId">Casa de Show</label>
     <select class="form-control" asp-for="CasaDeShowId"
         asp-items='@(new SelectList(@ViewBag.CasaDeShow,"Id", "Nome"))'></select>
-    <span asp-validation-for="CasaDeShowId"></span><br>
+    <span class="text-danger" asp-validation-for="CasaDeShowId"></span><br>
 
     <label asp-for="Ingresso">Capacidade</label>
     <input class="form-control" type="number" asp-for="Ingresso" placeholder="100">
-    <span asp-validation-for="Ingresso"></span><br>
+    <span class="text-danger" asp-validation-for="Ingresso"></span><br>
 
     <label asp-for="Data">Data do evento</label>
     <input class="form-control" type="date" asp-for="Data">
-    <span asp-validation-for="Data"></span><br>
+    <span class="text-danger" asp-validation-for="Data"></span><br>
 
     <label asp-for="ValorDoTicketString">Valor do ticket</label>
     <input class="form-control" type="text" asp-for="ValorDoTicketString" placeholder="90.00">
-    <span asp-validation-for="ValorDoTicketString"></span><br>
+    <span class="text-danger" asp-validation-for="ValorDoTicketString"></span><br>
 
     <button class="btn btn-success">Cadastrar</button>
 </form>
