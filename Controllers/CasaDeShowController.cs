@@ -1,8 +1,10 @@
+using System;
 using System.Linq;
 using EventMarketplace.Data;
 using EventMarketplace.DTO;
 using EventMarketplace.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EventMarketplace.Controllers
 {
@@ -52,13 +54,19 @@ namespace EventMarketplace.Controllers
         [HttpPost]
         public IActionResult Deletar(int id)
         {
-            if (id > 0)
+
+            var eventos = database.Eventos.Include(c => c.CasaDeShow).ToList();
+            var casaDeShow = database.CasaDeShows.First(ca => ca.Id == id);
+            foreach (var item in eventos)
             {
-                var casaDeShow = database.CasaDeShows.First(ca => ca.Id == id);
-                database.Remove(casaDeShow);
-                database.SaveChanges();
+                if (item.CasaDeShow.Id == casaDeShow.Id)
+                {
+                    return RedirectToAction("Eventos", "Admin");
+                }
             }
-            return RedirectToAction("CasaDeShow", "Admin");
+            database.Remove(casaDeShow);
+            database.SaveChanges();
+            return Ok("Evento excluido com sucesso.");
         }
 
     }

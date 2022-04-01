@@ -70,6 +70,7 @@ namespace EventMarketplace.Controllers
                 var evento = database.Eventos.First(e => e.Id == id);
                 database.Eventos.Remove(evento);
                 database.SaveChanges();
+                return Ok();
             }
             return RedirectToAction("Eventos", "Admin");
         }
