@@ -83,9 +83,9 @@
                     {
                         <span>Diversos</span>
                     }</td>
-                <td>R$@eventos.ValorDoTicket</td>
+                <td>R$@eventos.ValorDoTicket.ToString("f2")</td>
                 <td>@eventos.CasaDeShow.Nome</td>
-                <td>@eventos.Data</td>
+                <td>@eventos.Data.ToShortDateString()</td>
                 <td>@eventos.Ingresso</td>
                 <td><a data-toggle="modal" data-target="#myModal" class="btn btn-success">Comprar</a></td>
             </tr>

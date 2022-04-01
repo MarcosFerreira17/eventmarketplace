@@ -508,3 +508,4 @@ C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desa
 C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\Projeto do Desafio\eventmarketplace\obj\Debug\net5.0\ref\EventMarketplace.dll
 C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\Projeto do Desafio\eventmarketplace\obj\Debug\net5.0\EventMarketplace.pdb
 C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\Projeto do Desafio\eventmarketplace\obj\Debug\net5.0\EventMarketplace.genruntimeconfig.cache
+C:\Users\mnia\OneDrive - GFT Technologies SE\Documents\Workspace\Atividades\Desafio MVC\Projeto do Desafio\eventmarketplace\obj\Debug\net5.0\Razor\Views\Admin\Vendas.cshtml.g.cs

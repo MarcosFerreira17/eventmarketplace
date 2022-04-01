@@ -87,9 +87,9 @@
                     }
                 </td>
                 <td>@eventos.Ingresso</td>
-                <td>@eventos.ValorDoTicket</td>
+                <td>R$@eventos.ValorDoTicket.ToString("f2")</td>
                 <td>@eventos.CasaDeShow.Nome</td>
-                <td>@eventos.Data</td>
+                <td>@eventos.Data.ToShortDateString()</td>
 
                 <td><a href="/Admin/EditarEvento/@eventos.Id" class="btn btn-primary">Editar</a>
                     <form asp-controller="Evento" asp-action="Deletar" method="POST" style="display: inline;">

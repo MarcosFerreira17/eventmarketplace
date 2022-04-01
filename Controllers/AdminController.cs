@@ -70,5 +70,11 @@ namespace EventMarketplace.Controllers
 
             return View(eventoView);
         }
+
+        public IActionResult Vendas()
+        {
+            var vendas = database.Vendas.Include(e => e.Evento).ToList();
+            return View(vendas);
+        }
     }
 }
