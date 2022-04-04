@@ -13,7 +13,7 @@
 
 <script>
     $(document).ready(function () {
-        $('#events').DataTable({
+        $('#eventos').DataTable({
             "info": false,
             "language": {
                 "lengthMenu": "Mostrando _MENU_ Registros por página",
@@ -32,18 +32,16 @@
     });
 </script>
 
-<table id="events" class="table table-striped table-bordered">
+<table id="eventos" class="table table-striped table-bordered">
     <thead>
         <tr>
             <th>Id</th>
             <th>Nome</th>
             <th>Genero</th>
             <th>Capacidade</th>
-
             <th>Valor</th>
             <th>Casa de Show</th>
             <th>Data</th>
-
             <th>Ações</th>
         </tr>
     </thead>
@@ -86,10 +84,9 @@
                 <td>R$@eventos.ValorDoTicket.ToString("f2")</td>
                 <td>@eventos.CasaDeShow.Nome</td>
                 <td>@eventos.Data.ToShortDateString()</td>
-
                 <td><a href="/Admin/EditarEvento/@eventos.Id" class="btn btn-primary">Editar</a>
-                    <form asp-controller="Evento" asp-action="Deletar" method="POST" style="display: inline;">
-                        <input type="hidden" value="@eventos.Id">
+                    <form asp-action="Deletar" asp-controller="Evento" style="display: inline;">
+                        <input type="hidden" name="id" id="id" value="@eventos.Id">
                         <button class="btn btn-danger">Deletar</button>
                     </form>
                 </td>

@@ -95,6 +95,7 @@ namespace EventMarketplace.Controllers
             if (ModelState.IsValid)
             {
                 var evento = database.Eventos.Include(c => c.CasaDeShow).First(e => e.Id == eventoTemporario.Id);
+
                 evento.Nome = eventoTemporario.Nome;
                 evento.Imagem = eventoTemporario.Imagem;
                 evento.Data = eventoTemporario.Data;
@@ -113,15 +114,17 @@ namespace EventMarketplace.Controllers
         [HttpPost]
         public IActionResult Deletar(int id)
         {
-            if (id > 0)
+            var eventos = database.Eventos.Include(c => c.CasaDeShow).ToList();
+            foreach (var item in eventos)
             {
-                var evento = database.Eventos.First(e => e.Id == id);
-                database.Eventos.Remove(evento);
-                database.SaveChanges();
-                return RedirectToAction("Eventos", "Admin");
+                if (id == item.Id)
+                {
+                    database.Remove(item);
+                    database.SaveChanges();
+                    return RedirectToAction("Eventos", "Admin");
+                }
             }
             return RedirectToAction("Eventos", "Admin");
-
         }
     }
 }

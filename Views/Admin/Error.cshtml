@@ -1,0 +1,11 @@
+@{
+    Layout = "_LayoutAdmin";
+}
+@{
+    ViewData["Title"] = "Admin Dashboard - Erro";
+}
+
+<h2 class="text-danger">Você não pode criar um evento sem antes cadastrar uma Casa de show.</h2>
+<div class="text-center mt-4">
+    <a asp-action="NovaCasaDeShow" asp-controller="Admin" class="btn btn-success">Criar nova casa de show</a>
+</div>

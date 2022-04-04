@@ -48,12 +48,10 @@
                 <td>@casaDeShow.Nome</td>
                 <td>@casaDeShow.Endereco</td>
                 <td><a href="/Admin/EditarCasaDeShow/@casaDeShow.Id" class="btn btn-primary">Editar</a>
-
                     <form asp-action="Deletar" asp-controller="CasaDeShow" style="display: inline;">
                         <input type="hidden" name="id" id="id" value="@casaDeShow.Id">
                         <button class="btn btn-danger">Deletar</button>
                     </form>
-
                 </td>
             </tr>
         }

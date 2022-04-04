@@ -66,7 +66,7 @@ namespace EventMarketplace.Controllers
             }
             database.Remove(casaDeShow);
             database.SaveChanges();
-            return Ok("Evento excluido com sucesso.");
+            return RedirectToAction("CasaDeShow", "Admin");
         }
 
     }

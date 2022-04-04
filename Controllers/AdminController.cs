@@ -18,6 +18,10 @@ namespace EventMarketplace.Controllers
             return View();
         }
 
+        public IActionResult Error()
+        {
+            return View();
+        }
         public IActionResult CasaDeShow()
         {
             var casaDeShows = database.CasaDeShows.ToList();
@@ -47,8 +51,17 @@ namespace EventMarketplace.Controllers
 
         public IActionResult NovoEvento()
         {
-            ViewBag.CasaDeShow = database.CasaDeShows.ToList();
-            return View();
+            var casaDeShow = database.CasaDeShows.ToList();
+            foreach (var item in casaDeShow)
+            {
+                if (item.Id > 0)
+                {
+                    ViewBag.CasaDeShow = database.CasaDeShows.ToList();
+                    return View();
+                }
+            }
+            //TempData["Você não pode cadastrar um evento sem antes cadatrar uma Casa de show"].ToString();
+            return RedirectToAction("Error", "Admin");
         }
 
         public IActionResult EditarEvento(int id)
@@ -64,7 +77,6 @@ namespace EventMarketplace.Controllers
             eventoView.ValorDoTicket = evento.ValorDoTicket;
             eventoView.CasaDeShowId = evento.CasaDeShow.Id;
             ViewBag.CasaDeShow = database.CasaDeShows.ToList();
-
             return View(eventoView);
         }
 
