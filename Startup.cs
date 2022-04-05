@@ -35,6 +35,7 @@ namespace EventMarketplace
             options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
+            services.AddAuthorization(options => options.AddPolicy("Admin", policy => policy.RequireClaim("Admin", "root")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();

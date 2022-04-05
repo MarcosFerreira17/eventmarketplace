@@ -1,11 +1,14 @@
+using System.Net;
 using EventMarketplace.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using EventMarketplace.DTO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EventMarketplace.Controllers
 {
+    [Authorize(Policy = "Admin")]
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext database;
