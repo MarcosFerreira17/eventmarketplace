@@ -22,10 +22,9 @@ namespace EventMarketplace.Migrations
             migrationBuilder.Sql("INSERT INTO Eventos(Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('Eletro Day', '06.jpg', '2022-09-17 12:00:00', '200.00', 1000, 6,'6')");
             migrationBuilder.Sql("INSERT INTO Eventos(Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('Só mais um aleatório', '07.jpg', '2022-11-17 12:00:00', '200.00', 1500, 2,'5')");
 
-
-            migrationBuilder.Sql("INSERT INTO Vendas(Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2022-02-17 12:00:00', 1, 200.00, 1, true)");
-            migrationBuilder.Sql("INSERT INTO Vendas(Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2022-05-17 12:00:00', 2, 200.00, 1, true)");
-            migrationBuilder.Sql("INSERT INTO Vendas(Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2022-11-17 12:00:00', 3, 200.00, 1, true)");
+            migrationBuilder.Sql("INSERT INTO Vendas(Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2022-02-17 12:00:00', 1, 200.00, 1, 1)");
+            migrationBuilder.Sql("INSERT INTO Vendas(Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2022-05-17 12:00:00', 2, 200.00, 1, 1)");
+            migrationBuilder.Sql("INSERT INTO Vendas(Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2022-11-17 12:00:00', 3, 200.00, 1, 1)");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
