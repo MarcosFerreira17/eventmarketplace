@@ -13,7 +13,7 @@ namespace EventMarketplace.DTO
         public DateTime Data { get; set; }
         [Required]
         public int EventoId { get; set; }
-        [Required(ErrorMessage = "O evento deve conter um valor de venda.")]
+        [Required]
         public float ValorDaVenda { get; set; }
         [Required(ErrorMessage = "A venda deve ter uma quantidade minima de ingressos.")]
         [Range(1, 10, ErrorMessage = "Você pode comprar até 10 ingressos.")]

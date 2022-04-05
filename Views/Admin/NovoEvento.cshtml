@@ -16,7 +16,7 @@
     <span class="text-danger" asp-validation-for="Nome"></span><br>
 
     <label asp-for="Imagem">Imagem</label>
-    <input class="form-control" type="file" name="anexo" asp-for="Imagem" placeholder=".jpg">
+    <input class="form-control" type="file" name="anexo" asp-for="Imagem">
     <span class="text-danger" asp-validation-for="Imagem"></span><br>
 
     <label asp-for="Genero">Gênero Musical</label>
@@ -41,7 +41,7 @@
     <span class="text-danger" asp-validation-for="Ingresso"></span><br>
 
     <label asp-for="Data">Data do evento</label>
-    <input class="form-control" type="date" asp-for="Data">
+    <input class="form-control" type="date" min="2022-01-01" max="2024-12-31" asp-for="Data">
     <span class="text-danger" asp-validation-for="Data"></span><br>
 
     <label asp-for="ValorDoTicketString">Valor do ticket</label>

@@ -1,0 +1,17 @@
+@model EventMarketplace.DTO.VendaDTO
+
+@{
+    Layout = "_Layout";
+}
+
+<h2>Editar Evento</h2>
+<form class="form-horizontal" asp-action="Atualizar" asp-controller="Venda" method="POST">
+    <input type="hidden" asp-for="Id">
+
+    <label asp-for="EventoId">Nome</label>
+    <input class="form-control" type="text" asp-for="EventoId"
+        asp-items='@(new SelectList(@ViewBag.Eventos,"Id", "Nome"))'>
+    <span asp-validation-for="EventoId"></span><br>
+
+    <button class="btn btn-success">Atualizar</button>
+</form>

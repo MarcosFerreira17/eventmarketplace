@@ -68,7 +68,6 @@ namespace EventMarketplace.Controllers
 
                 var nome = SalvarArquivo(anexo);
                 eventoTemporario.Imagem = nome;
-
                 evento.Nome = eventoTemporario.Nome;
                 evento.Imagem = eventoTemporario.Imagem;
                 evento.Data = eventoTemporario.Data;

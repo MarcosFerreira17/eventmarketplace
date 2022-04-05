@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Net;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -8,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using EventMarketplace.Models;
 using EventMarketplace.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+using EventMarketplace.DTO;
 
 namespace EventMarketplace.Controllers
 {
@@ -36,6 +39,21 @@ namespace EventMarketplace.Controllers
         {
             var casaDeShows = database.CasaDeShows.ToList();
             return View(casaDeShows);
+        }
+
+        public IActionResult NovaVenda()
+        {
+            ViewBag.Evento = database.Eventos.ToList();
+            return View();
+        }
+
+        [Authorize]
+        public IActionResult Historico()
+        {
+            var vendas = database.Vendas.Include(e => e.Evento).ToList();
+            ViewBag.CasaDeShow = database.CasaDeShows.ToList();
+
+            return Content("Não implementado, retorne a página anterior.");
         }
 
         public IActionResult Privacy()

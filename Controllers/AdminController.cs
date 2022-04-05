@@ -63,7 +63,6 @@ namespace EventMarketplace.Controllers
                     return View();
                 }
             }
-            //TempData["Você não pode cadastrar um evento sem antes cadatrar uma Casa de show"].ToString();
             return RedirectToAction("Error", "Admin");
         }
 
@@ -86,6 +85,7 @@ namespace EventMarketplace.Controllers
         public IActionResult Vendas()
         {
             var vendas = database.Vendas.Include(e => e.Evento).ToList();
+            ViewBag.CasaDeShow = database.CasaDeShows.ToList();
             return View(vendas);
         }
     }

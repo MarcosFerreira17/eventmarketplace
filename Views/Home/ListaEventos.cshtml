@@ -49,10 +49,10 @@
     <tbody>
         @foreach (var eventos in Model)
         {
-            <tr class="text-center">
+            <tr>
                 <td>@eventos.Id</td>
                 <td><img src="..\fotos\@eventos.Imagem"
-                    class="shadow-1-strong rounded-circle" style="width: 155px; height: 155px;"></td>
+                    class="shadow-1-strong rounded-circle" style="width: 100px; height: 100px;"></td>
                 <td>@eventos.Nome</td>
                 <td class="text-center">@if (@eventos.Genero == "0")
                     {
@@ -86,43 +86,9 @@
                 <td>@eventos.CasaDeShow.Nome</td>
                 <td>@eventos.Data.ToShortDateString()</td>
                 <td>@eventos.Ingresso</td>
-                <td><button class="btn btn-success" data-toggle="modal" data-target="#myModal">Comprar</button</td>
+                <td><a href="/Home/novaVenda/@eventos.Id" class="btn btn-primary">Comprar</a></td>
+                
             </tr>
         }
     </tbody>
 </table>
-
- <!-- The Modal -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Finalizar compra</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <h2>Total: R$ <span id="totalVenda"></span> </h2>
-                    <hr>
-                    <p>Data do Evento:</p>
-                    <input type="data" disabled class="form-control" id="dataEvento">
-                    <br><p>Ingressos Disponiveis:</p>
-                    <input type="number" disabled class="form-control" id="qtdIngressoDisp">
-                    <br><p>Quantidade de Ingressos:</p>
-                    <input type="number" class="form-control" id="qtdIngresso">
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <div id="prevenda">
-                        <button type="button" class="btn btn-success" id="finalizarVendaBTN">Finalizar venda</button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
