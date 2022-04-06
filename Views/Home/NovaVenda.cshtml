@@ -1,17 +1,45 @@
 @model EventMarketplace.DTO.VendaDTO
 
 @{
+    ViewData["Title"] = "Comprar ingressos";
+}
+@{
     Layout = "_Layout";
 }
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('../fotos/02.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1 class="nomeEvento"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content-->
+<main class="container">
+    <form class="form-horizontal" asp-action="Atualizar" asp-controller="Evento" method="POST">
 
-<h2>Editar Evento</h2>
-<form class="form-horizontal" asp-action="Atualizar" asp-controller="Venda" method="POST">
-    <input type="hidden" asp-for="Id">
+        <div class="form-group">
+            <label>Data e horário do evento</label>
+            <input disabled type="datetime-local" id="dataHorario" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Ingressos restantes</label>
+            <input disabled type="number" id="qtdIngressosDisponiveis" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Preço unitário do ingresso</label>
+            <input disabled type="number" id="valorDoIngresso" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Quantidade de ingressos</label>
+            <input type="number" id="qtdIngressoCompra" class="form-control">
+        </div>
 
-    <label asp-for="EventoId">Nome</label>
-    <input class="form-control" type="text" asp-for="EventoId"
-        asp-items='@(new SelectList(@ViewBag.Eventos,"Id", "Nome"))'>
-    <span asp-validation-for="EventoId"></span><br>
+        <button type="submit" class="btn btn-success">Confirmar Compra</button>
 
-    <button class="btn btn-success">Atualizar</button>
-</form>
+    </form>
+</main>

@@ -43,7 +43,7 @@ namespace EventMarketplace.Controllers
 
         public IActionResult NovaVenda()
         {
-            ViewBag.Evento = database.Eventos.ToList();
+            ViewBag.Eventos = database.Eventos.ToList();
             return View();
         }
 
@@ -51,8 +51,6 @@ namespace EventMarketplace.Controllers
         public IActionResult Historico()
         {
             var vendas = database.Vendas.Include(e => e.Evento).ToList();
-            ViewBag.CasaDeShow = database.CasaDeShows.ToList();
-
             return Content("Não implementado, retorne a página anterior.");
         }
 

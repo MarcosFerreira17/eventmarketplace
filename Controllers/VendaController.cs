@@ -16,8 +16,6 @@ namespace eventmarketplace.Controllers
             this.database = database;
         }
 
-
-
         [HttpPost]
         public IActionResult GerarVenda([FromBody] VendaDTO dados)
         {

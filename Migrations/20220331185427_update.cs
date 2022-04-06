@@ -14,13 +14,13 @@ namespace EventMarketplace.Migrations
             migrationBuilder.Sql("INSERT INTO CasaDeShows(Id, Nome, Endereco) VALUES('6','Mango Eventos', 'R. São bento do Carui 146, Barueri, SP, 65666-000')");
             migrationBuilder.Sql("INSERT INTO CasaDeShows(Id, Nome, Endereco) VALUES('7','Pancadão do Melão', 'Av. Tiradentes 323, Barueri, SP, 43433-550')");
 
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('1','Cover LinkinPark', '01.jpg', '2022-12-17 12:00:00', 200.00, 1000, 1, '2')");
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('2','Cover Beatles', '02.jpg', '2022-05-17 12:00:00', '200.00', 1200, 2 ,'2')");
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('3','Foo Fighters', '03.jpg', '2022-04-17 12:00:00', '200.00', 1300, 3, '3')");
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('4','Funk Aleatório', '04.jpg', '2022-03-17 12:00:00', '200.00', 900, 4, '4')");
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('5','Zéca Pagordinho', '05.jpg', '2022-02-17 12:00:00', '200.00', 1100, 5,'0')");
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('6','Eletro Day', '06.jpg', '2022-09-17 12:00:00', '200.00', 1000, 6,'6')");
-            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('7','Só mais um aleatório', '07.jpg', '2022-11-17 12:00:00', '200.00', 1500, 2,'5')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('1','Show do LinkinPark', '01.jpg', '2022-12-20 12:30:00', 200.00, 1000, 1, '2')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('2','Show do Beatles', '02.jpg', '2022-05-14 19:50:00', '300.00', 1200, 2 ,'2')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('3','Show do Foo Fighters', '03.jpg', '2022-04-12 21:00:00', '400.00', 1300, 3, '2')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('4','Show do Funk Aleatório', '04.jpg', '2023-03-23 22:10:00', '500.00', 900, 4, '1')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('5','Show do Zéca Pagordinho', '05.jpg', '2022-02-25 22:00:00', '600.00', 1100, 5,'0')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('6','Show Electro Day', '06.jpg', '2023-09-10 17:20:00', '700.00', 1000, 6,'4')");
+            migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('7','Show do aleatório', '07.jpg', '2022-11-11 12:50:00', '800.00', 1500, 2,'5')");
 
             migrationBuilder.Sql("INSERT INTO Vendas(Id, Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('1','2022-02-17 12:00:00', 1, 200.00, 1, 1)");
             migrationBuilder.Sql("INSERT INTO Vendas(Id, Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2','2022-05-17 12:00:00', 2, 200.00, 1, 1)");
