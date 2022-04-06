@@ -89,14 +89,22 @@ namespace EventMarketplace.Controllers
         }
 
         [HttpPost]
-        public IActionResult Atualizar(EventoDTO eventoTemporario)
+        public IActionResult Atualizar(EventoDTO eventoTemporario, IFormFile anexo)
         {
             if (ModelState.IsValid)
             {
                 var evento = database.Eventos.Include(c => c.CasaDeShow).First(e => e.Id == eventoTemporario.Id);
 
+                if (!ValidaImagem(anexo))
+                {
+                    return View(evento);
+                }
+
+                var nome = SalvarArquivo(anexo);
+                var uploadImagem = eventoTemporario.Imagem = nome;
+
                 evento.Nome = eventoTemporario.Nome;
-                evento.Imagem = eventoTemporario.Imagem;
+                evento.Imagem = uploadImagem;
                 evento.Data = eventoTemporario.Data;
                 evento.Genero = eventoTemporario.Genero;
                 evento.ValorDoTicket = float.Parse(eventoTemporario.ValorDoTicketString, CultureInfo.InvariantCulture.NumberFormat);
@@ -107,6 +115,7 @@ namespace EventMarketplace.Controllers
             }
             else
             {
+                ViewBag.Path = _filePath;
                 return View("../Admin/EditarEvento");
             }
         }

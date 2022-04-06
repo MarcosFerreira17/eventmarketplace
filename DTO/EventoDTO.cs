@@ -15,7 +15,6 @@ namespace EventMarketplace.DTO
         [Range(0, 50000)]
         public int Ingresso { get; set; }
         [Required(ErrorMessage = "Especifique a data do evento.")]
-        [DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
         public DateTime Data { get; set; }
         [Required(ErrorMessage = "O evento deve conter um valor.")]
         public float ValorDoTicket { get; set; }

@@ -9,7 +9,8 @@ namespace EventMarketplace.DTO
         [Required]
         public int Id { get; set; }
         [Required(ErrorMessage = "Especifique a data do evento.")]
-        [DisplayFormat(DataFormatString = "{dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime Data { get; set; }
         [Required]
         public int EventoId { get; set; }
