@@ -41,7 +41,7 @@
             <th>Capacidade</th>
             <th>Valor</th>
             <th>Casa de Show</th>
-            <th>Data</th>
+            <th>Data/Horario</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -83,7 +83,7 @@
                 <td>@eventos.Ingresso</td>
                 <td>R$@eventos.ValorDoTicket.ToString("f2")</td>
                 <td>@eventos.CasaDeShow.Nome</td>
-                <td>@eventos.Data.ToShortDateString()</td>
+                <td>@eventos.Data.ToString("dd/MM/yyyy HH:mm")</td>
                 <td><a href="/Admin/EditarEvento/@eventos.Id" class="btn btn-primary">Editar</a>
                     <form asp-action="Deletar" asp-controller="Evento" style="display: inline;">
                         <input type="hidden" name="id" id="id" value="@eventos.Id">
