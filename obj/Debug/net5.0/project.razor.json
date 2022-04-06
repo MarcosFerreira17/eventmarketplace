@@ -15709,11 +15709,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\Projeto do Desafio\\eventmarketplace\\Views\\Home\\NovaVenda.cshtml",
-      "TargetPath": "Views\\Home\\NovaVenda.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\mnia\\OneDrive - GFT Technologies SE\\Documents\\Workspace\\Atividades\\Desafio MVC\\Projeto do Desafio\\eventmarketplace\\Views\\Admin\\EditarEvento.cshtml",
       "TargetPath": "Views\\Admin\\EditarEvento.cshtml",
       "FileKind": "mvc"

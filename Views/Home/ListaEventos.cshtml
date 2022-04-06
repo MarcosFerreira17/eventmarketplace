@@ -9,28 +9,14 @@
 
 <div class="card-header p-3" style="margin-top: 4.5rem;">
     <h5 class="mb-0"><i class="fas fa-tasks me-4"></i>Lista de Eventos</h5>
+    <br>
+        <div class="input-group">
+            <input type="number" class="form-control" id="codEvento" placeholder="Preencha o numero do id de um evento e compre seu ingresso">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#VendaModal" type="button" id="pesquisar">Comprar</button>
+                </span>
+    <br></div>     
 </div>
-
-<script>
-    $(document).ready(function () {
-        $('#evenos').DataTable({
-            "info": false,
-            "language": {
-                "lengthMenu": "Mostrando _MENU_ Registros por página",
-                "zeroRecords": "Nada encontrado",
-                "info": "Mostrando página _PAGE_ de _PAGES_",
-                "infoEmpty": "Nenhum registro disponível",
-                "search": "Buscar:",
-                "paginate": {
-                    "first": "Primeiro",
-                    "last": "Ultimo",
-                    "next": "Proximo",
-                    "previous": "Anterior"
-                }
-            }
-        });
-    });
-</script>
 
 <table id="eventos" class="table table-striped table-bordered">
     <thead>
@@ -43,7 +29,6 @@
             <th>Casa de Show</th>
             <th>Data/Horario</th>
             <th>Qtd de Ingressos Disponiveis</th>
-            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -86,9 +71,60 @@
                 <td>@eventos.CasaDeShow.Nome</td>
                 <td>@eventos.Data.ToString("dd/MM/yyyy HH:mm")</td>
                 <td>@eventos.Ingresso</td>
-                <td><a href="/home/novavenda/@eventos.Id" class="btn btn-primary">Comprar</a></td>
-                
             </tr>
         }
     </tbody>
+
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="VendaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="modal-header">
+            <h5 class="modal-title">Confirmar compra</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <!-- Page Form-->
+        <form class="form-horizontal" id="eventoForm">
+            <div class="form-group">
+                <label>Nome do Evento</label>
+                <input required disabled type="text" id="nomeEvento" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Casa de Show</label>
+                <input required disabled type="text" id="nomeCasaDeShow" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Data e horário do evento</label>
+                <input required disabled type="datetime-local" id="dataHorario" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Ingressos restantes</label>
+                <input required disabled type="number" id="qtdIngressosDisponiveis" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Preço unitário do ingresso</label>
+                <input required disabled type="number" id="valorDoIngresso" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Quantidade de ingressos</label>
+                <input required type="number" id="qtdIngressoCompra" class="form-control">
+                <br>
+                <button type="submit" id="confirmaIngresso" class="btn btn-primary">Confirmar Ingressos</button>
+            </div>
+            <div class="form-group">
+                <label>Valor total da Compra</label>
+                <input required disabled type="number" id="totalVenda" class="form-control">
+            </div>
+            <hr>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+            <button type="submit" id="confirmaCompra" class="btn btn-success">Confirmar Compra</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

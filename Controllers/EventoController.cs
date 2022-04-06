@@ -134,5 +134,28 @@ namespace EventMarketplace.Controllers
             }
             return RedirectToAction("Eventos", "Admin");
         }
+        [HttpPost]
+        public IActionResult Evento(int id)
+        {
+            if (id > 0)
+            {
+                var evento = database.Eventos.Include(c => c.CasaDeShow).First(e => e.Id == id);
+                if (evento != null)
+                {
+                    Response.StatusCode = 200;
+                    return Json(evento);
+                }
+                else
+                {
+                    Response.StatusCode = 404;
+                    return Json(null);
+                }
+            }
+            else
+            {
+                Response.StatusCode = 404;
+                return Json(null);
+            }
+        }
     }
 }
