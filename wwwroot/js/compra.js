@@ -18,7 +18,7 @@ function preencherModal(dadosEvento, q){
     var eventoTemp = {}    
     Object.assign(eventoTemp, evento);
 
-    _venda = {evento: eventoTemp, quantidade: q, totalVenda: __totalVenda__};
+    _venda = {evento: eventoTemp, quantidadeIngresso: q, valorDaVenda: __totalVenda__};
 
     $("#nomeEvento").val(dadosEvento.nome);
     $("#nomeCasaDeShow").val(dadosEvento.casaDeShow.nome);
@@ -28,7 +28,6 @@ function preencherModal(dadosEvento, q){
     $("#qtdIngressoCompra").val(1);
     $("#totalVenda").val(__totalVenda__);
     atualizarTotal();
-    compra.push(_venda);
 }
 
 function zerarModal(){
@@ -54,6 +53,9 @@ $("#confirmaIngresso").click(function(event){
     $("#totalVenda").val(__totalVenda__.toFixed(2));
     
     preencherModal(eventoParaModal, qtd);
+    
+    compra.push(_venda);
+    
 });
 
 
@@ -61,7 +63,7 @@ $("#confirmaIngresso").click(function(event){
 $("#pesquisar").click(function() {
     var codEvento = $("#codEvento").val();
     var enderecoTemporario = enderecoEvento + codEvento;
-    $.post(enderecoTemporario, function(dados, status){
+    $.post(enderecoTemporario, function(dados){
         evento = dados;
         preencherModal(evento);
 
@@ -86,10 +88,12 @@ $("#finalizarVendaBTN").click(function(){
         url: enderecoVenda,
         dataType: "json",
         contentType: "application/json",
-        data: JSON.stringify(compra),
+        data: JSON.stringify(_venda),
         success: function(data){
             console.log("Dados enviados com sucesso.");
             console.log(data);
         }
     });
+
+    alert("Infelizmente este método não esta funcionando, estamos trabalhando nisto");
 });

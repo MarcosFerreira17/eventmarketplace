@@ -80,8 +80,8 @@ namespace EventMarketplace.Migrations
                     b.Property<int?>("EventoId")
                         .HasColumnType("int");
 
-                    b.Property<float>("QuantidadeIngresso")
-                        .HasColumnType("float");
+                    b.Property<int>("QuantidadeIngresso")
+                        .HasColumnType("int");
 
                     b.Property<bool>("Status")
                         .HasColumnType("tinyint(1)");

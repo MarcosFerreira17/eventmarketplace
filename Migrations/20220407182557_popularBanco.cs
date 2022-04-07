@@ -2,10 +2,18 @@
 
 namespace EventMarketplace.Migrations
 {
-    public partial class update : Migration
+    public partial class popularBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterColumn<int>(
+                name: "QuantidadeIngresso",
+                table: "Vendas",
+                type: "int",
+                nullable: false,
+                oldClrType: typeof(float),
+                oldType: "float");
+
             migrationBuilder.Sql("INSERT INTO CasaDeShows(Id, Nome, Endereco) VALUES('1','LaCasa', 'Al. Solitude 33, Barueri, SP, 06455-000')");
             migrationBuilder.Sql("INSERT INTO CasaDeShows(Id, Nome, Endereco) VALUES('2','Music venue', 'Av. Lindóméia 3456, Barueri, SP, 34324-000')");
             migrationBuilder.Sql("INSERT INTO CasaDeShows(Id, Nome, Endereco) VALUES('3','Leal Santos', 'R. Inventando sem Criatividade 331, Barueri, SP, 43242-000')");
@@ -32,7 +40,13 @@ namespace EventMarketplace.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.AlterColumn<float>(
+                name: "QuantidadeIngresso",
+                table: "Vendas",
+                type: "float",
+                nullable: false,
+                oldClrType: typeof(int),
+                oldType: "int");
         }
     }
 }

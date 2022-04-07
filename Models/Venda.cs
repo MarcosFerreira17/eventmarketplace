@@ -8,7 +8,7 @@ namespace EventMarketplace.Models
         public DateTime Data { get; set; }
         public Evento Evento { get; set; }
         public float ValorDaVenda { get; set; }
-        public float QuantidadeIngresso { get; set; }
+        public int QuantidadeIngresso { get; set; }
         public bool Status { get; set; }
 
     }

@@ -51,7 +51,7 @@ namespace EventMarketplace.Controllers
         public IActionResult Historico()
         {
             var vendas = database.Vendas.Include(e => e.Evento).ToList();
-            return Content("Não implementado, retorne a página anterior.");
+            return View(vendas);
         }
 
         public IActionResult Privacy()
