@@ -12,8 +12,8 @@
     method="POST">
     <input type="hidden" asp-for="Id">
     <label asp-for="Nome">Nome</label>
-    <input class="form-control" type="text" asp-for="Nome" placeholder="Nome">
-    <span asp-validation-for="Nome"></span><br>
+    <input class="form-control" type="text" asp-for="Nome" placeholder="Nome do evento">
+    <span class="text-danger" asp-validation-for="Nome"></span><br>
 
     <label asp-for="Imagem">Imagem</label>
     <input class="form-control" type="file" name="anexo" asp-for="Imagem">
@@ -29,24 +29,24 @@
         <option value="5">5 - Pop</option>
         <option value="6">6 - Diversos</option>
     </select>
-    <span asp-validation-for="Genero"></span><br>
+    <span class="text-danger" asp-validation-for="Genero"></span><br>
 
     <label asp-for="CasaDeShowId">Casa de Show</label>
     <select class="form-control" asp-for="CasaDeShowId"
         asp-items='@(new SelectList(@ViewBag.CasaDeShow,"Id", "Nome"))'></select>
-    <span asp-validation-for="CasaDeShowId"></span><br>
+    <span class="text-danger" asp-validation-for="CasaDeShowId"></span><br>
 
     <label asp-for="Ingresso">Capacidade</label>
     <input class="form-control" type="number" asp-for="Ingresso" placeholder="1000">
-    <span asp-validation-for="Ingresso"></span><br>
+    <span class="text-danger" asp-validation-for="Ingresso"></span><br>
 
     <label asp-for="Data">Data do evento</label>
     <input class="form-control" type="datetime-local" min="2022-01-01" max="2024-12-31" asp-for="Data">
-    <span asp-validation-for="Data"></span><br>
+    <span class="text-danger" asp-validation-for="Data"></span><br>
 
     <label asp-for="ValorDoTicketString">Valor do ticket</label>
     <input class="form-control" type="text" asp-for="ValorDoTicketString" placeholder="90.00">
-    <span asp-validation-for="ValorDoTicketString"></span><br>
+    <span class="text-danger" asp-validation-for="ValorDoTicketString"></span><br>
 
     <button class="btn btn-success">Atualizar</button>
 </form>

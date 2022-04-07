@@ -12,7 +12,7 @@
     <input type="hidden" asp-for="Id" value="0">
 
     <label asp-for="Nome">Nome</label>
-    <input class="form-control" type="text" asp-for="Nome" placeholder="Nome">
+    <input class="form-control" type="text" asp-for="Nome" placeholder="Preencha o nome do evento">
     <span class="text-danger" asp-validation-for="Nome"></span><br>
 
     <label asp-for="Imagem">Imagem</label>
@@ -37,7 +37,8 @@
     <span class="text-danger" asp-validation-for="CasaDeShowId"></span><br>
 
     <label asp-for="Ingresso">Capacidade</label>
-    <input class="form-control" type="number" asp-for="Ingresso" placeholder="100">
+    <input class="form-control" type="number" asp-for="Ingresso"
+        placeholder="Preencha a quantidade de ingressos do evento">
     <span class="text-danger" asp-validation-for="Ingresso"></span><br>
 
     <label asp-for="Data">Data do evento</label>
@@ -45,7 +46,8 @@
     <span class="text-danger" asp-validation-for="Data"></span><br>
 
     <label asp-for="ValorDoTicketString">Valor do ticket</label>
-    <input class="form-control" type="text" asp-for="ValorDoTicketString" placeholder="90.00">
+    <input class="form-control" type="text" asp-for="ValorDoTicketString"
+        placeholder="Preencha o valor do ingresso conforme exemplo: 90.00">
     <span class="text-danger" asp-validation-for="ValorDoTicketString"></span><br>
 
     <button class="btn btn-success">Cadastrar</button>

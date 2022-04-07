@@ -116,6 +116,7 @@ namespace EventMarketplace.Controllers
             else
             {
                 ViewBag.Path = _filePath;
+                ViewBag.CasaDeShow = database.CasaDeShows.ToList();
                 return View("../Admin/EditarEvento");
             }
         }
@@ -140,6 +141,15 @@ namespace EventMarketplace.Controllers
             if (id > 0)
             {
                 var evento = database.Eventos.Include(c => c.CasaDeShow).First(e => e.Id == id);
+
+                if (evento != null)
+                {
+                    if (evento.Ingresso <= 0)
+                    {
+                        evento = null;
+                    }
+                }
+
                 if (evento != null)
                 {
                     Response.StatusCode = 200;
@@ -157,5 +167,6 @@ namespace EventMarketplace.Controllers
                 return Json(null);
             }
         }
+
     }
 }

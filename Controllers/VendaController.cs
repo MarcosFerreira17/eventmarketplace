@@ -17,32 +17,16 @@ namespace eventmarketplace.Controllers
         }
 
         [HttpPost]
-        public IActionResult GerarVenda([FromBody] VendaDTO dados)
+        public IActionResult GerarVenda([FromBody] SaidaDTO dados)
         {
-            //Gerando venda
-            Venda venda = new Venda();
-            venda.Evento.Id = dados.EventoId;
-            venda.Data = dados.Data;
-            venda.QuantidadeIngresso = dados.QuantidadeIngresso;
-            venda.ValorDaVenda = dados.ValorDaVenda;
-            database.Vendas.Add(venda);
-            database.SaveChanges();
+            return Ok(new { msg = "Compra  processada com sucesso!!" });
+        }
 
-            // List<Saida> saidas = new List<Saida>();
-            // foreach (var saida in dados.Produtos)
-            // {
-            //     Saida s = new Saida();
-            //     s.Quantidade = saida.Quantidade;
-            //     s.ValorDaVenda = saida.Subtotal;
-            //     s.Venda = venda;
-            //     s.Produto = database.Produtos.First(p => p.Id == saida.Produto);
-            //     s.Data = DateTime.Now;
-            //     saidas.Add(s);
-            // }
-            // //SALVA NO BANCO
-            // database.AddRange(saidas);
-            // database.SaveChanges();
-            return Ok(new { msg = "Venda processada com sucesso!!" });
+        public class SaidaDTO
+        {
+            public int evento;
+            public int quantidadeIngresso;
+            public float totalVenda;
         }
     }
 }
