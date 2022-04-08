@@ -30,10 +30,6 @@ namespace EventMarketplace.Migrations
             migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('6','Show Electro Day', '06.jpg', '2023-09-10 17:20:00', '700.00', 1000, 6,'4')");
             migrationBuilder.Sql("INSERT INTO Eventos(Id, Nome, Imagem, Data, ValorDoTicket, Ingresso, CasaDeShowId, Genero) VALUES('7','Show do aleatório', '07.jpg', '2022-11-11 12:50:00', '800.00', 1500, 2,'5')");
 
-            migrationBuilder.Sql("INSERT INTO Vendas(Id, Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('1','2022-02-17 12:00:00', 1, 200.00, 1, 1)");
-            migrationBuilder.Sql("INSERT INTO Vendas(Id, Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('2','2022-05-17 12:00:00', 2, 200.00, 1, 1)");
-            migrationBuilder.Sql("INSERT INTO Vendas(Id, Data, EventoId, ValorDaVenda, QuantidadeIngresso, Status) VALUES('3','2022-11-17 12:00:00', 3, 200.00, 1, 1)");
-
             migrationBuilder.Sql("INSERT INTO AspNetUsers(Id, UserName, NormalizedUserName, Email, NormalizedEmail, EmailConfirmed, PasswordHash, SecurityStamp, ConcurrencyStamp, PhoneNumber, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnd, LockoutEnabled, AccessFailedCount) VALUES(1, 'root@gft.com', 'ROOT@GFT.COM', 'root@gft.com', 'ROOT@GFT.COM', 1, 'AQAAAAEAACcQAAAAEDKKGwIr3/sZNA+TZYwi+tJZsJNjbChDOBLh8GQk5c+75qNr5WWvksnDH1CNSlsTVg==', 'KQAJSBHXX4526X3BH4QCXMYYU5EVS45R', '423900e1-b412-4b55-ba31-9ae68b09c2a4', NULL, 0, 0, NULL, 1, 0)");
             migrationBuilder.Sql("INSERT INTO AspNetUserClaims(Id, UserId, ClaimType, ClaimValue) VALUES(1, '1', 'Admin', 'root')");
         }
