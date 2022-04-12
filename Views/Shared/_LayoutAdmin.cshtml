@@ -5,26 +5,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title>@ViewData["Title"]</title>
 
-    <!-- Bootstrap core CSS-->
+     <!-- Bootstrap core CSS-->
     <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
-    <link href="~/vendor/fontawesome-free/css/fontawesome.min.css" rel="stylesheet">
+    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="~/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="~/css/sb-admin.min.css" rel="stylesheet">
 
-    <!-- Core plugin JavaScript-->
+    <!-- Carregamento do JQuery-->
     <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Load of JQuery-->
+    <!-- Core plugin JavaScript-->
     <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="~/vendor/datatables/jquery.datatables.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -52,7 +53,7 @@
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Casa de Show">
                     <a class="nav-link" asp-action="Vendas" asp-controller="Admin">
-                        <i class="fa fa-fw fa-money"></i>
+                        <i class="fa fa-fw fa-shopping-cart"></i>
                         <span class="nav-link-text">Vendas</span>
                     </a>
                 </li>
@@ -88,12 +89,14 @@
             <i class="fa fa-angle-up"></i>
         </a>
 
-        <!-- Bootstrap core JavaScript-->
-        <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="https://kit.fontawesome.com/4533a8da74.js" crossorigin="anonymous"></script>
-        <!-- Custom scripts for all pages-->
-        <script src="~/js/sb-admin.min.js"></script>
+
     </div>
+      <!-- Bootstrap core JavaScript-->
+  <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="~/js/sb-admin.min.js"></script>
 </body>
 
 </html>

@@ -41,24 +41,6 @@ namespace EventMarketplace.Controllers
             return View(casaDeShows);
         }
 
-        public IActionResult NovaVenda()
-        {
-            ViewBag.Eventos = database.Eventos.ToList();
-            return View();
-        }
-
-        [Authorize]
-        public IActionResult Historico()
-        {
-            var vendas = database.Vendas.Include(e => e.Evento).ToList();
-            return View(vendas);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

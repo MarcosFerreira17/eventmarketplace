@@ -21,28 +21,44 @@ namespace eventmarketplace.Controllers
         }
 
         [HttpPost]
-        public IActionResult GerarVenda([FromBody] VendaDTO dados)
+        public IActionResult Deletar(int id)
         {
-
-
-            Venda venda = new Venda();
-
-            venda.Data = DateTime.Now;
-            venda.ValorDaVenda = dados.valorDaVenda;
-            venda.QuantidadeIngresso = dados.quantidadeIngresso;
-            venda.Evento = database.Eventos.First(evento => evento.Id == dados.evento);
-            venda.Status = true;
-            database.Vendas.Add(venda);
-            database.SaveChanges();
-
-            return Ok();
+            var vendas = database.Vendas.Include(c => c.Evento).ToList();
+            foreach (var item in vendas)
+            {
+                if (id == item.Id)
+                {
+                    database.Remove(item);
+                    database.SaveChanges();
+                    return RedirectToAction("Eventos", "Admin");
+                }
+            }
+            return RedirectToAction("Eventos", "Admin");
         }
 
-        public class VendaDTO
-        {
-            public int evento;
-            public int quantidadeIngresso;
-            public float valorDaVenda;
-        }
+        // [HttpPost]
+        // public IActionResult GerarVenda([FromBody] VendaDTO dados)
+        // {
+        //
+        //
+        //     Venda venda = new Venda();
+        //
+        //     venda.Data = DateTime.Now;
+        //     venda.ValorDaVenda = dados.valorDaVenda;
+        //     venda.QuantidadeIngresso = dados.quantidadeIngresso;
+        //     venda.Evento = database.Eventos.First(evento => evento.Id == dados.evento);
+        //     venda.Status = true;
+        //     database.Vendas.Add(venda);
+        //     database.SaveChanges();
+        //
+        //     return Ok();
+        // }
+        //
+        // public class VendaDTO
+        // {
+        //     public int evento;
+        //     public int quantidadeIngresso;
+        //     public float valorDaVenda;
+        // }
     }
 }

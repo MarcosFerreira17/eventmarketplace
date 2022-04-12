@@ -10,6 +10,5 @@ namespace EventMarketplace.Models
         public float ValorDaVenda { get; set; }
         public int QuantidadeIngresso { get; set; }
         public bool Status { get; set; }
-
     }
 }
